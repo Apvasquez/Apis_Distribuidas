@@ -19,7 +19,7 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
-<div x-data="setup()" x-init="$refs.loading.classList.add('hidden');" :class="{ 'dark': isDark}" class="mt-0 bg-fixed h-screen bg-bottom bg-cover bg-black"
+<div x-data="setup()" x-init="$refs.loading.classList.add('hidden');" :class="{ 'dark': isDark}" class="mt-0 bg-fixed h-screen bg-bottom bg-cover bg-transparent"
 >
 
     <x-jet-banner />
