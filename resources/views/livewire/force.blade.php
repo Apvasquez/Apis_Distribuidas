@@ -29,49 +29,48 @@
                     <div class="h-auto mx-2 my-2 text-center text-black border rounded shadow-md" x-show="open"
                         x-on:click.away="open = false">
                         <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
-                            wire:model="presion">
-                        <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
-                            wire:model="densidad">
-                            <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
                             wire:model="masa">
                         <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
-                            wire:model="temperatura">
+                            wire:model="aceleracion">
+                            <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
+                            wire:model="distancia">
+                        <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
+                            wire:model="tiempo">
                         <p>{{ $grado }}</p>
                         <h1 class="text-white font-mono font-semibold uppercase text-2xl">Respuesta</h1>
                         {{--  {{$res}}  --}}
                         @foreach ($res as $r)
                             <div class="text-xl font-bold">
                                 <input class="block w-48 h-16 m-2 mx-auto rounded h-28-md" disabled type="text" name=""
-                                    id="" value="{{ $r['resultado']}}">
+                                    id="" value="{{$r['p']}}">
                            <h1 class="text-white ">
-                                    {{$presion. $densidad. $masa. $temperatura}}  </h1>
+                                    {{--  {{$presion. $densidad. $masa. $temperatura}}  </h1>  --}}
                             </div>
                             @endforeach
 
                     </div>
                 @endif
                 @if ($grado == 2)
-                    <div class="h-auto mx-2 my-2 text-center bg-gray-900 dark:bg-gray-700 text-black border rounded shadow-md" x-show="open"
-                        x-on:click.away="open = false">
-                        <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
-                            wire:model="volumen1">
-                        <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
-                            wire:model="presion1">
-                            <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
-                            wire:model="temperatura1">
-                        <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
-                            wire:model="presion2">
-                            <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
-                            wire:model="temperatura2">
-                        <p>{{ $grado }}</p>
-                        <h1 class="text-white font-mono font-semibold uppercase text-2xl">Respuesta</h1>
-                        @foreach ($res2 as $r)
-                            <div class="text-xl font-bold">
-                                <input class="block w-48 h-16 m-2 mx-auto rounded h-28-md" disabled type="text" name=""
-                                    id="" value="{{ $r['resultado']}}">
+                x-on:click.away="open = false">
+                <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
+                    wire:model="masa">
+                <input type="number" class="p-2 m-2 text-center rounded shadow-md h-28-md" name="" id=""
+                    wire:model="aceleracion">
 
-                            </div>
-                        @endforeach
+                <p>{{ $grado }}</p>
+                <h1 class="text-white font-mono font-semibold uppercase text-2xl">Respuesta</h1>
+                {{--  {{$res}}  --}}
+                @foreach ($res2 as $r)
+                    <div class="text-xl font-bold">
+                        <input class="block w-48 h-16 m-2 mx-auto rounded h-28-md" disabled type="text" name=""
+                            id="" value="{{ $r['f']}}">
+                   <h1 class="text-white ">
+                            {{--  {{$presion. $densidad. $masa. $temperatura}}  </h1>  --}}
+                    </div>
+                    @endforeach
+
+            </div>
+
                     </div>
                 @endif
 
